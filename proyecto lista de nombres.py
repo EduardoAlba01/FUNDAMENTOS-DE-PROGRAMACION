@@ -17,6 +17,6 @@ def contar_vocales():
     if respuesta.lower() == "s":
         contar_vocales()
     else:
-        print("tt")
+        print("nos vemos!")
 
 contar_vocales()
