@@ -1,0 +1,37 @@
+import random
+
+numero_ganador = random.randint(1, 9)
+intentos = 0
+jugar_de_nuevo = "si"
+
+while intentos < 5:
+    intento = int(input("Adivina el número entre 1 y 9: "))
+    if intento == numero_ganador:
+        print(f"ganaste con el número ({numero_ganador}) en {intentos} intentos")
+        break
+    if intento > 9:
+        print("no sabes leer?, es del 1 al 9.")    
+        break
+    else:
+        if abs(numero_ganador - intento) < 3:
+            print("caliente, dale otra vez.")
+        elif intento < numero_ganador:
+            print("muy frio. Inténtalo de nuevo.")
+        else:
+            print("Muy caliente.")
+
+    intentos += 1
+
+if intentos >= 5:
+    print("que malo eres, ¡Fin del juego!")
+
+jugar_de_nuevo = input("¿Quieres jugar de nuevo? (yes/no): ")
+while jugar_de_nuevo == "yes":
+    numero_ganador = random.randint(1, 9)
+    if jugar_de_nuevo == 'yes':
+        print("hmmm, no")
+    break
+
+while jugar_de_nuevo == "no":
+    print("que bien, bye")
+    break
